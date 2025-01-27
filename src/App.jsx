@@ -1,11 +1,18 @@
 
 import './App.css'
+// reaproveitamento de estrutura
+
+import { Outlet } from 'react-router-dom'
+
+//importação compnente de navbar
+import Navbar from './components/Navbar'
 
 function App() {
 
   return (
     <div className='app'>
-      <h1> React Router </h1>
+      <Navbar />
+      <Outlet />
     </div>
   )
 }

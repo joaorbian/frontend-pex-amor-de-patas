@@ -8,25 +8,31 @@ import HeplUs from './routes/HeplUs.jsx'
 import Login from './routes/Login.jsx'
 import Adopt from './routes/Adopt.jsx'
 import Home from './routes/Home.jsx'
+import App from './App.jsx'
 
 const router = createBrowserRouter([
   {
-    path: "/", element: <Home />
-  },
-  {
-    path: "about", element: <About />
-  },
-  {
-    path: "helpUs", element: <HeplUs />
-  },
-  {
-    path: "announce", element: <Announce />
-  },
-  {
-    path: "adopt", element: <Adopt />
-  },
-  {
-    path: "login", element: <Login />
+    path: "/", element: <App/>,
+    children: [
+   {
+    path: "/", element: <Home/>,
+    },
+    {
+      path: "about", element: <About />
+    },
+    {
+      path: "helpUs", element: <HeplUs />
+    },
+    {
+      path: "announce", element: <Announce />
+    },
+    {
+      path: "adopt", element: <Adopt />
+    },
+    {
+      path: "login", element: <Login />
+    }
+    ]
   }
 ])
 
